@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "spectrum-api"
+version = "0.1.0"
+description = "A FastAPI service for frequency spectrum analysis."
+authors = ["neuragicus"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+pydantic = "^2.11.7"
+numpy = "^2.3.2"
+pyfftw = "^0.15.0"
+orjson = "^3.11.1"
+gunicorn = "^23.0.0"
+toml = "^0.10.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^5.13.2"
+ruff = "^0.12.7"
+mypy = "^1.17.1"
+pre-commit = "^4.2.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.4.1"
+httpx = "^0.28.1"  # For TestClient HTTP requests
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = false
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = false
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
