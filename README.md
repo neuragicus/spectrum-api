@@ -8,14 +8,14 @@ Fast Fourier Transform (FFT) and returns the FFT results.
 The Spectrum API is designed to:
 - Perform signal spectrum analysis using FFT
 - Process time-domain signals and extract frequency components
-- Return frequency, magnitude, and phase information
+- Return frequency, magnitude and phase information
 - Provide a RESTful interface with authentication
 - Optimize performance using PyFFTW with caching capabilities
 
 ## Dependencies and Tools
 
-This project uses Poetry for dependency management with the following package groups.
-See pyproject.toml to check the app production, test and development requirements.
+This project uses Poetry for dependency management with production, test and development requirements groups.
+See [pyproject.toml](pyproject.toml) to review requirements.
 
 ## API Endpoints
 
@@ -62,9 +62,8 @@ This service performs **no sanitization** on the input signal data. It expects:
 Invalid data will result in processing errors or potentially incorrect results. Always ensure your input data is properly preprocessed before sending it to the API.
 
 ## Installation with Docker
+Build the Docker image:
 ```
-bash
-# Build the Docker image
 docker build -t spectrum-api .
 ```
 ## Running with Docker
@@ -75,8 +74,8 @@ The application can be run in three different modes:
 Run the API server
 ```
 docker run -p 8000:8000 \
-  -e API_KEY_NAME=api-token \
-  -e API_KEY_VALUE=your-secret-key \
+  -e API_KEY_NAME=your-api-key-header-name \
+  -e API_KEY_VALUE=your-api-key \
   spectrum-api app
 ```
 or passing the .env file:
@@ -102,7 +101,6 @@ Running tests verifies that all functionality works as expected.
 
 Here's a minimal Python snippet to test the API:
 ```
-python
 import requests
 import json
 
