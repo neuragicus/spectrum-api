@@ -16,20 +16,24 @@ def generate_real_signal(
 ) -> DataArray:
     """Test signal generator.
 
-    Generate a sum of cosinusoids with specified frequencies, amplitudes, and phases.
+    Generate a sum of cosine waves with specified frequencies, amplitudes, and phases.
     This function creates a synthetic signal by summing multiple
-    cosinusoids each defined by a FrequencyBin object. The signal is
+    cosine waves, each defined by a FrequencyBin object. The signal is
     generated using vectorized numpy operations for efficiency.
     The function validates that the frequency_bins list is not empty and
     generates a time-domain signal that can be used for testing spectrum
     analysis.
 
-    :param frequency_bins: List of FrequencyBin defining the frequency
-        components
-    :param fs: Sampling frequency in Hz
-    :param duration: Duration of the signal in seconds
-    :return: Numpy array containing the generated signal
-    :raises ValueError: If the frequency_bins list is empty
+    Args:
+        frequency_bins: List of FrequencyBin defining the frequency components
+        fs: Sampling frequency in Hz
+        duration: Duration of the signal in seconds
+
+    Returns:
+        Numpy array containing the generated signal
+
+    Raises:
+        ValueError: If the frequency_bins list is empty
     """
     if not frequency_bins:
         raise ValueError("frequency_bins must be a non-empty list")
@@ -42,7 +46,7 @@ def generate_real_signal(
     # Compute angular frequencies once
     angular_freqs = 2 * np.pi * freqs[:, None] * t
 
-    # Vectorized cosinusoid generation and summation
+    # Vectorized cosine waves generation and summation
     signal = np.dot(amps, np.cos(angular_freqs + phases[:, None]))
 
     return signal.tolist()

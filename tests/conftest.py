@@ -12,8 +12,8 @@ from src.spectrum_api.config import auth
 def test_client() -> TestClient:
     """Create a TestClient instance for testing the FastAPI application.
 
-    :return: Configured TestClient instance for making test requests to
-        the API
+    Returns:
+        Configured TestClient instance for making test requests to the API
     """
     # Set test API key
     auth.API_KEY_VALUE = "TEST_API_KEY"

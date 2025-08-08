@@ -28,8 +28,8 @@ def validate_api_key(api_key: str = Security(api_key_header)) -> None:
 
     Raises:
         HTTPException: If the API key is invalid or missing
-
     """
+
     if not api_key or api_key != API_KEY_VALUE:
         raise HTTPException(
             status_code=HTTPStatus.FORBIDDEN.value, detail="Invalid or missing API key"

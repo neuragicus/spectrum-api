@@ -20,8 +20,9 @@ class SpectrumAnalysisRequest(BaseModel):
     This model represents a request to analyze the frequency spectrum of a signal.
     It contains the time interval between data points and the signal data itself.
 
-    :param time_interval: Time interval in seconds between consecutive data points
-    :param data: Array of signal data points
+    Args:
+        time_interval: Time interval in seconds between consecutive data points
+        data: Array of signal data points
     """
 
     time_interval: float | int = Field(
@@ -40,8 +41,11 @@ class SpectrumAnalysisRequest(BaseModel):
         - The list is not empty
         - All elements in the list are numeric (int or float)
 
-        :return: The validated instance
-        :raises ValueError: If the data validation fails
+        Returns:
+            The validated instance
+
+        Raises:
+            ValueError: If the data validation fails
         """
         if not self.data or not isinstance(self.data, list):
             raise ValueError("Input data must be a non-empty list.")
@@ -59,7 +63,11 @@ class FrequencyBin(BaseModel):
 
     @model_validator(mode="after")
     def zero_near_values(self) -> "FrequencyBin":
-        """Set near-zero values to zero, according to tolerance."""
+        """Set near-zero values to zero, according to tolerance.
+
+        Returns:
+            The modified FrequencyBin instance with near-zero values set to zero
+        """
         if abs(self.module) < FREQUENCY_MODULE_TOLERANCE:
             self.module = 0.0
         if abs(self.phase) < FREQUENCY_PHASE_TOLERANCE:
@@ -73,7 +81,8 @@ class SpectrumAnalysisResponse(BaseModel):
     This model contains the complete spectrum analysis results,
     including all frequency components found in the signal.
 
-    :param result: List of spectrum analysis results for each frequency component
+    Args:
+        result: List of spectrum analysis results for each frequency component
     """
 
     result: list[FrequencyBin] = Field(
