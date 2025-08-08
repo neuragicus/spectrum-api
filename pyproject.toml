@@ -8,25 +8,25 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.116.1"
-uvicorn = "^0.35.0"
-pydantic = "^2.11.7"
-numpy = "^2.3.2"
-pyfftw = "^0.15.0"
-orjson = "^3.11.1"
-gunicorn = "^23.0.0"
-toml = "^0.10.2"
+fastapi = "0.116.1"
+uvicorn = "0.35.0"
+pydantic = "2.11.7"
+numpy = "2.3.2"
+pyfftw = "0.15.0"
+orjson = "3.11.1"
+gunicorn = "23.0.0"
+toml = "0.10.2"
 
 [tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-isort = "^5.13.2"
-ruff = "^0.12.7"
-mypy = "^1.17.1"
-pre-commit = "^4.2.0"
+black = "25.1.0"
+isort = "5.13.2"
+ruff = "0.12.7"
+mypy = "1.17.1"
+pre-commit = "4.2.0"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.4.1"
-httpx = "^0.28.1"  # For TestClient HTTP requests
+pytest = "8.4.1"
+httpx = "0.28.1"  # For TestClient HTTP requests
 
 [tool.black]
 line-length = 88
