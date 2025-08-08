@@ -22,9 +22,12 @@ from tests.utils import generate_real_signal
 
 
 class ApproximateFrequencyBin(FrequencyBin):
-    """Test utility class.
+    """FrequencyBin with overload approximate equality comparison for tests only.
 
-    It extends and overloads FrequencyBin with approximate equality comparison.
+    Args:
+        frequency: The frequency value
+        module: The magnitude/module value
+        phase: The phase value
     """
 
     def __eq__(self, other: object) -> bool:

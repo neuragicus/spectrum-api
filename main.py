@@ -30,6 +30,8 @@ logger = logging.getLogger(APP_NAME)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, Any]:
+    """Manage the lifecycle of the FastAPI application."""
+
     # Startup application
     logger.info(f"Starting {APP_NAME} v.{APP_VERSION}.")
 

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "spectrum-api"
-version = "0.1.0"
+version = "0.1.1"
 description = "A FastAPI service for frequency spectrum analysis."
 authors = ["neuragicus"]
 license = "MIT"
