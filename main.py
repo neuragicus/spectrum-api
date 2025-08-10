@@ -1,4 +1,4 @@
-"""Main application entry point for the Spectral API.
+"""Main application entry point for the Spectrum API.
 
 This module sets up the FastAPI application with spectrum analysis
 endpoints and authentication middleware. It provides the main API

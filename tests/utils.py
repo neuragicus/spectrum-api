@@ -1,4 +1,4 @@
-"""Test utilities for the SpectralAPI tests.
+"""Test utilities for the SpectrumAPI tests.
 
 This module contains reusable test components including signal
 generators and test data structures for spectrum analysis testing. It

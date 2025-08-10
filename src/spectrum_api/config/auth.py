@@ -1,4 +1,4 @@
-"""Authentication module for the Spectral API.
+"""Authentication module for the Spectrum API.
 
 This module provides API key-based authentication using FastAPI's
 security features. It validates API keys from request headers against

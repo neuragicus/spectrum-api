@@ -1,4 +1,4 @@
-"""Fixture definitions for the SpectralAPI tests."""
+"""Fixture definitions for the SpectrumAPI tests."""
 
 from unittest.mock import MagicMock
 

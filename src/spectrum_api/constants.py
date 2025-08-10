@@ -1,4 +1,4 @@
-"""Constants for the SpectralAPI.
+"""Constants for the SpectrumAPI.
 
 This module defines application-wide constants including spectrum_api metadata,
 environment variable names, and field identifiers used throughout the
