@@ -1,4 +1,4 @@
-"""Input models for the SpectralAPI.
+"""Input models for the SpectrumAPI.
 
 This module defines the Pydantic models used for spectrum analysis requests
 and responses, including validation logic for input data.

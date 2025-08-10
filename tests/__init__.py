@@ -1,1 +1,1 @@
-"""Test package for the Spectral API project."""
+"""Test package for the Spectrum API project."""
