@@ -17,6 +17,17 @@ The Spectrum API is designed to:
 This project uses Poetry for dependency management with production, test and development requirements groups.
 See [pyproject.toml](pyproject.toml) to review requirements.
 
+## Version Management
+
+The project version can be bumped using the provided `bump-version.sh` script. Use one of the following commands:
+```
+./bump.sh patch # Increment patch version (e.g., 1.0.0 -> 1.0.1)
+./bump.sh minor # Increment minor version (e.g., 1.0.0 -> 1.1.0)
+./bump.sh major # Increment major version (e.g., 1.0.0 -> 2.0.0)
+```
+
+
+
 ## API Endpoints
 
 ### POST /analyze_spectrum
